@@ -4,6 +4,9 @@ CREATE TABLE customers (
     email VARCHAR(255) NOT NULL,
     nome VARCHAR(255) NOT NULL
 );
+-- Adicionar um Customer na migração
+INSERT INTO customers (email, nome) VALUES ('test@example.com', 'Test Customer');
+
 
 -- Tabela de Orders
 CREATE TABLE orders (
