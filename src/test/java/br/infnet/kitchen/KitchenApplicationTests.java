@@ -20,8 +20,8 @@ public class KitchenApplicationTests {
             .withPassword("test");
 
     @Container
-    static RabbitMQContainer rabbitMQContainer = new RabbitMQContainer("rabbitmq:3")
-            .withExposedPorts(5672, 15672);
+    static RabbitMQContainer rabbitMQContainer = new RabbitMQContainer("rabbitmq:3") // Standard RabbitMQ version
+            .withExposedPorts(5672);
 
     @BeforeAll
     static void setUp() {
@@ -35,7 +35,6 @@ public class KitchenApplicationTests {
 
     @Test
     void contextLoads() {
-        // Aqui, você pode testar o contexto e a funcionalidade de containers
         assert (postgreSQLContainer.isRunning());
         assert (rabbitMQContainer.isRunning());
     }
